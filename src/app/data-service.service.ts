@@ -39,10 +39,14 @@ export class DataServiceService {
     return this.http.post<PostResponse>(this.API_URL + 'record/add', post);
   }
 
-  deleteTask(id: string) {
+  deletePost(id: string) {
     return this.http.delete(this.API_URL + id);
   }
-  // editTaskOnMongoDb(id: string, data: Task) {
-  //   return this.http.post('http://localhost:5000/update/' + id, data);
-  // }
+
+  editPost(id: string, data: Post) {
+    return this.http.post<PostResponse>(this.API_URL + 'update/' + id, data);
+  }
+  getPost(id: string) {
+    return this.http.get<Post>(this.API_URL + 'record/' + id);
+  }
 }

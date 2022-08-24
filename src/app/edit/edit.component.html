@@ -1,0 +1,7 @@
+<form (ngSubmit)="onSubmit(post._id)" #f="ngForm" *ngIf="postAvailable">
+    <div class="input-group mb-3">
+        <textarea type="text" class="form-control" placeholder="Add a Post" name="post" required [ngModel]="post.post"
+            style="height:100px"></textarea>
+        <button class="btn btn-outline-secondary" type="submit">Add</button>
+    </div>
+</form>
