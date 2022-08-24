@@ -1,0 +1,20 @@
+<!-- POST INPUT FIELD -->
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div class="input-group mb-3">
+        <textarea type="text" class="form-control" placeholder="Add a Post" name="post" required ngModel
+            style="height:100px"></textarea>
+        <button class="btn btn-outline-secondary" type="submit">Add</button>
+    </div>
+</form>
+<!-- USER FEED START HERE -->
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true"
+        *ngFor="let post of posts; let i=index">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{post.user}}</h5>
+            <!-- <small>3 days ago</small> -->
+        </div>
+        <p class="mb-1 text-start">{{post.post}}</p>
+        <small class="fw-light flex-grow-1"> {{post.modified | date}}</small>
+    </a>
+</div>
